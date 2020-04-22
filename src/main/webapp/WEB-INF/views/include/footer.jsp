@@ -20,7 +20,7 @@
 <body>
 <footer>
 
-  장현서 200419
+  장현서 
 
 </footer>
 </body>
