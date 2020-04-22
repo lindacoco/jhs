@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.ProjectMapper">
+   <insert id="insert" parameterType="ProjectVO">
+      insert into project(name, content, regDate, endDate, progress) values
+      (#{name}, #{content}, #{regDate}, #{endDate}, #{progress})
+   </insert>
+   
+   <select id="readByNo" resultType="ProjectVO">
+      select * from project
+      where no = #{no}
+   </select>
+
+   <select id="listPage" resultType="ProjectVO">
+      select * from project order by no desc limit #{page},10
+   </select>
+    <select id="list" resultType="ProjectVO">
+     select * from project order by no desc
+  </select>
+    <update id="update" parameterType="ProjectVO">
+       update project  set 
+       name =#{name}, content = #{content}, regDate=#{regDate}, endDate= #{endDate}, progress=#{progress}
+       where no=#{no}
+    </update> 
+   <delete id="delete">
+      delete from project
+      where no = #{no}
+   </delete>
+   
+   <select id="listCriteria" resultType="ProjectVO">
+      select * from project order by no desc limit #{pageStart}, #{perPageNum}
+    </select>
+   
+   <select id="totalCount" resultType="int">
+       select  count(no) from project
+    </select>
+</mapper>
