@@ -1,3 +1,6 @@
+create database jhs_project;
+
+select user(),database();
 use jhs_project;
 create table project (
   no int auto_increment,

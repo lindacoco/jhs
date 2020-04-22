@@ -1,7 +1,5 @@
 package com.yi.jhs;
 
-import java.util.Date;
-
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -47,7 +45,7 @@ public class ProjectDAOTest {
     
     @Test
 	public void test3Update() throws Exception {
-		ProjectVO vo = dao.readByNo(3);
+		ProjectVO vo = dao.readByNo(4);
 		vo.setName("사탕도");
 
 		dao.update(vo);
