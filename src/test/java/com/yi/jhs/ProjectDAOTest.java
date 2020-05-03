@@ -45,7 +45,7 @@ public class ProjectDAOTest {
     
     @Test
 	public void test3Update() throws Exception {
-		ProjectVO vo = dao.readByNo(4);
+		ProjectVO vo = dao.readByNo(5);
 		vo.setName("사탕도");
 
 		dao.update(vo);

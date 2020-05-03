@@ -20,7 +20,42 @@
     width: 150px;
   }
 
+
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+
+<script>
+   $(function(){
+	   
+	   $("#btnSub").click(function(){
+		   if($("input[name='name']").val()==""){
+			   alert("값을 입력해주세요");
+			   return false;
+		   }
+		   if($("input[name='content']").val()==""){
+			   alert("값을 입력해주세요");
+			   return false;
+		   }
+		   if($("input[name='regDate']").val()==""){
+			   alert("값을 입력해주세요");
+			   return false;
+		   }
+		   
+		   if($("input[name='endDate']").val()==""){
+			   alert("값을 입력해주세요");
+			   return false;
+		   }
+
+		   
+	   })
+	   
+	   $("#btnCancel").click(function(){
+		   location.href="${pageContext.request.contextPath }/project/list";
+	   })
+
+   })
+
+</script>
 <h1>
 	프로젝트 등록 페이지
 </h1>
@@ -48,8 +83,8 @@
      <input type="text" name="progress">
    </p>
    <p>
-     <input type="submit" value="저장">
-     <input type="submit" value="취소">
+     <input type="submit" value="저장" id="btnSub">
+     <input type="button" value="취소" id="btnCancel">
    </p>
 
 </form>
